@@ -8,6 +8,7 @@
 <style>
 body {font-size: 100%;}
 h1 {color: #284174;}
+h2 {margin-top: 55px;}
 h3 {font-weight: 100;
 line-height: 1.5;
 margin: 0px;
@@ -16,6 +17,7 @@ letter-spacing: -0.02em; font-size: 128%;}
 h3 {color: #3EAAB7;}
 .content {margin-left: 20px;}
 .main {padding: 0 25px;}
+div div {margin: 10px 0;}
 </style>
 <!-- 
 
@@ -42,6 +44,7 @@ $generalTerms = "
 3. 13-ая зарплата
 4. Город и страна вашего проживания значения не имеют.
 5. Пятидневная рабочая неделя предполагается.
+6. Рассмотрим варианты и на полставки / попроектная работа
 
 Итак, нужны:
 
@@ -150,12 +153,12 @@ function generateJobVacancy($data, $lang, $job="", $i=0) {
 		
 		if (!empty($details['5'])) $submitAppTo = $details['5'];
 		
-		$job['titles'] .= "<li><a href='#$i'>$title</a></li>";
+		$job['titles'] .= "\t<li><a href='#$i'>$title</a></li>\n";
 
-		$job['infos'] .= "<h2><a name='$i'></a>$title</h2>
-
-		<a class='pure-button pure-button-primary' href='$submitAppTo'>Подать заявку</a>
+		$job['infos'] .= "
 		
+		<h2><a name='$i'></a>$title</h2>
+		<a class='pure-button pure-button-primary' href='$submitAppTo'>Подать заявку</a>
 		<p>$details[0]</p>
 		
 		<div class='content'>
@@ -176,6 +179,8 @@ function generateJobVacancy($data, $lang, $job="", $i=0) {
 
 		
 		";
+
+		// echo $i;
 
 		$i++;
 	
