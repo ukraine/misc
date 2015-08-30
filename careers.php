@@ -146,27 +146,31 @@ function generateJobVacancy($data, $lang, $job="", $i=0) {
 		
 		$title = array_shift($details);
 
+		$submitAppTo = "mailto:support@8nog.com?subject=$title";
+		
+		if (!empty($details['5'])) $submitAppTo = $details['5'];
+		
 		$job['titles'] .= "<li><a href='#$i'>$title</a></li>";
 
 		$job['infos'] .= "<h2><a name='$i'></a>$title</h2>
 
-		<a class='pure-button pure-button-primary' href='mailto:support@8nog.com?subject=$title'>Подать заявку</a>
+		<a class='pure-button pure-button-primary' href='$submitAppTo'>Подать заявку</a>
 		
 		<p>$details[0]</p>
 		
 		<div class='content'>
 
 			<h3>$lang[obligations]</h3>
-			<p>" . str_replace("*", "<li>", $details['1']) . "</p>
+			<div>" . str_replace("*", "<li>", $details['1']) . "</div>
 			
 			<h3>$lang[requirements]</h3>
-			<p>" . str_replace("*", "<li>", $details['2']) . "</p>
+			<div>" . str_replace("*", "<li>", $details['2']) . "</div>
 
 			<h3>$lang[terms]</h3>
-			<p>" . str_replace("*", "<li>", $details['3']) . "</p>
+			<div>" . str_replace("*", "<li>", $details['3']) . "</div>
 
 			<h3>$lang[getStarted]</h3>
-			<p>$details[4]</p>
+			<div>$details[4]</div>
 
 		</div>
 
