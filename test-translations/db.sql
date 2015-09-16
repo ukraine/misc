@@ -1,0 +1,21 @@
+CREATE TABLE `madcms_tests` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `email` varchar(64) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `icq` varchar(16) NOT NULL,
+  `skype` varchar(32) NOT NULL,
+  `location` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `testtranslation` text CHARACTER SET utf8 NOT NULL,
+  `timespent` int(3) NOT NULL,
+  `ppw` decimal(4,2) NOT NULL,
+  `comments` text NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  `referal` varchar(255) NOT NULL,
+  `priority` int(2) NOT NULL,
+  `visibility` char(1) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `rate` int(1) NOT NULL,
+  `rater_comment` text NOT NULL,
+  `test_id` int(3) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
