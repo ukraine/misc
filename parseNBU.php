@@ -27,9 +27,6 @@ foreach(explode("\n",trim($dates)) as $key=>$val) {
 	preg_match('/USD(.*)Долар США(.*?)978(.*)EUR/s',$content,$match);
 	curl_close($ch);
 
-
-	// echo $content;
-
 	echo "\n<br>$uri\t" . date("d.m.Y h:s", strtotime($val)) . "\t	".trim($match['2'])/100;
 
 	flush();
