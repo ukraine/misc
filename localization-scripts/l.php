@@ -2,12 +2,16 @@
 
 error_reporting(E_ALL);
 
-// foreach($_GET as $key=>$val) {}
+// debug
+// foreach($_GET as $key=>$val) {echo "$key=>$val<br>";}
 
 include $_GET['f'];
 
+$langVarName = "language";
 
-foreach ($language as $key=>$val) {
+if (!empty($_GET['langVarName'])) $langVarName = $_GET['langVarName'];
+
+foreach (${$langVarName} as $key=>$val) {
 
 	switch($_GET['type']) {
 	
