@@ -1,5 +1,7 @@
 <meta charset="utf-8"><?
 
+// добавить в одну строку и другие версии переводов
+
 error_reporting(E_ALL);
 
 $lang['totalFiles']  = "Total text strings: ";
