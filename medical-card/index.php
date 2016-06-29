@@ -3,6 +3,13 @@
 // Добавить сокращения описания, если длиннее N
 // Добавить еще имя доктора
 // Добавить еще затраты на каждую процедуру
+// Вставить крестик в поле поиска для удаления строки
+// Время в человекпонятном формате
+// Сделать форму поиска expandable
+// Запоминать содержимое поиска в рамках одного сеанса
+// Ничего не найдено? Так и пишем
+// Установить пароль доступа
+// Новые записи вверху
 
 ini_set("display_errors","On");
 error_reporting(0);
@@ -20,7 +27,7 @@ $lang['ru'] = array(
 	"date"=>"Дата",
 	"event"=>"Событие",
 	"type"=>"Тип",
-	"filter" => "Начинайте вводить слово для фильтрации данных...",
+	"filter" => "Начинайте вводить слово для мгновенной фильтрации данных...",
 
 );
 
@@ -78,6 +85,7 @@ $("#searchInput").keyup(function () {
 });
 });//]]> 
 
+
 </script>
 
 <style type='text/css'>
@@ -122,9 +130,9 @@ $("#searchInput").keyup(function () {
 
 <!-- 24/01 CT-Thymus-24-01-2016.zip -->
 
-<div align="left">
-<form role="search" method="get" class="search-form" action="#">
-<input id="searchInput" type="text" placeholder="<?=$lang[HL]["filter"];?>" style='width: auto; min-width: 400px;'>
+<div align="center">
+<form role="search" method="get" class="search-form pure-form" action="#">
+<input id="searchInput" type="text" placeholder="<?=$lang[HL]["filter"];?>" class="pure-input-2-3 pure-input-rounded">
 </form>
 </div>
 
